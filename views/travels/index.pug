@@ -1,0 +1,31 @@
+extends ../layouts/index
+
+block slider
+    div(class="slider")
+        h1 Rio de Janeiro
+        em Aventura
+
+block content
+    main(class="container mt-5")
+        h2(class="text-center mb-5") About Us
+        div(class="row mb-5")
+            div(class="col-md-6")
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida, sapien a vehicula rutrum, risus risus vestibulum nisl, id feugiat elit mauris nec ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin massa arcu, fringilla a arcu quis, rhoncus blandit arcu. Phasellus aliquet, tortor vitae pretium sagittis.
+
+                p Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam ac tellus ante. Integer pulvinar arcu vel volutpat tristique. Aliquam efficitur libero diam, sit amet consequat arcu dictum sed. Aliquam magna dolor, dignissim sed lacus in, suscipit lobortis erat. Suspendisse aliquam diam vel purus vehicula.
+            div(class="col-md-6")
+                img(class="img-fluid" src="/img/inicio_nosotros.jpg", alt="About Us index")
+
+        include ../layouts/travels
+    div(class="descuento")
+        div(class="container")
+            div(class="row")
+                div(class="col-md-6")
+                    div(class="contenido")
+                        h3 5% discount
+                        p(class="titulo") Trip to Canada
+                        p(class="fecha") March 20, 2020 - March 28, 2020
+                        p(class="precio") $2,500 USD
+    div(class="container")
+        h2(class="mt-5 text-center") Testimonials
+        include ../layouts/testimonials

@@ -1,0 +1,31 @@
+extends ../layouts/index
+
+block content
+    main(class="container mt-5")
+        h1(class="text-center mt-5") #{pageName}
+        blockquote(class="text-center") Read about ours customers and their experiences
+        include ../layouts/testimonials
+        div(class="row")
+            h2(class="d-block w-100 text-center") Add your testimonial
+            div(class="row justify-content-center col")
+                div(class="col-md-8")
+                    p #{success}
+                    form(action="/testimonials" method="POST")
+                        div(class="form-group")
+                            label(for="name") Name
+                            input(class="form-control" type="text" id="name" placeholder="Enter your name" name="name" value=name)
+                            if errors && errors['nameErr']
+                                p(class="border bg-danger text-white text-center mt-3 rounded") #{errors['nameErr']}
+
+                        div(class="form-group")
+                            label(for="email") Email
+                            input(class="form-control" type="text" id="email" placeholder="Enter your email" name="email" value=email)
+                            if errors && errors['emailErr']
+                                p(class="border bg-danger text-white text-center mt-3 rounded") #{errors['emailErr']}
+
+                        div(class="form-group")
+                            label(for="message") Message
+                            textarea(class="form-control" id="message" name="message" rows="3" value=message) #{message}
+                            if errors && errors['messageErr']
+                                p(class="border bg-danger text-white text-center mt-3 rounded") #{errors['messageErr']}
+                        input(class="btn btn-success btn-block" type="submit" value="Send")
